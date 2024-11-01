@@ -1,0 +1,15 @@
+<%- include('partials/header', { title }) %>
+
+  <h1><%= title %></h1>
+  <ul>
+    <% todos.forEach(todo => { %>
+      <li><%= todo.todoText %> - <%= todo.completed ? 'Completed' : 'Not completed' %></li>
+    <% }) %>
+  </ul>
+
+  <form action="/todos/add" method="post">
+    <input type="text" name="todoText" placeholder="Enter description...">
+    <button type="submit">Add To Do</button>
+  </form>
+
+<%- include('partials/footer') %>
